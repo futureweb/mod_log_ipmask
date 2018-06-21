@@ -8,10 +8,10 @@
  *					  beim
  *					  Sächsischen Datenschutzbeauftragten
  *
- * Author			  Florian van Koten
+ * Author			 	  Florian van Koten
  *					  systematics NETWORK SERVICES GmbH
  *
- * Further modifications & Bugfixes		Andreas Schnederle-Wagner, Futureweb OG [https://www.futureweb.at/]
+ * Further modifications & Bugfixes	  Andreas Schnederle-Wagner, Futureweb OG [https://www.futureweb.at/]
  *
  * -----------------------------------------------------------------------------
  * 
