@@ -8,9 +8,6 @@
  *					  beim
  *					  Sächsischen Datenschutzbeauftragten
  *
- * Author			  Florian van Koten
- *					  systematics NETWORK SERVICES GmbH
- *
  * Author			 	  Florian van Koten
  *					  systematics NETWORK SERVICES GmbH
  *
