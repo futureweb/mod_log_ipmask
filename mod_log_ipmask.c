@@ -10,6 +10,9 @@
  *
  * Author			  Florian van Koten
  *					  systematics NETWORK SERVICES GmbH
+ *
+ * Further modifications & Bugfixes		Andreas Schnederle-Wagner, Futureweb OG [https://www.futureweb.at/]
+ *
  * -----------------------------------------------------------------------------
  * 
  * This program is free software; you can redistribute it and/or modify
