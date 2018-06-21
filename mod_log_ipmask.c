@@ -10,6 +10,12 @@
  *
  * Author			  Florian van Koten
  *					  systematics NETWORK SERVICES GmbH
+ *
+ * Author			 	  Florian van Koten
+ *					  systematics NETWORK SERVICES GmbH
+ *
+ * Further modifications & Bugfixes	  Andreas Schnederle-Wagner, Futureweb OG [https://www.futureweb.at/]
+ *
  * -----------------------------------------------------------------------------
  * 
  * This program is free software; you can redistribute it and/or modify
@@ -34,7 +40,7 @@
 
 
 #ifndef DEFAULT_FILTER_MASK
-#define DEFAULT_FILTER_MASK "255.255.255.0"
+#define DEFAULT_FILTER_MASK "255.255.255.255"
 #endif
 
 
