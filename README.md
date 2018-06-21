@@ -33,6 +33,11 @@ officer. Please see https://www.saechsdsb.de/ipmask for details or installation
 instructions (German only) and the source code for original copyright and 
 author.*
 
+Compile/Install instructions:  
+$ cd /path/to/mod_log_ipmask  
+$ apxs -c mod_log_ipmask.c  
+$ apxs -i -a -n log_ipmask mod_log_ipmask.la  
+
 **Caution** This is a fork of the original module, created by 
 [webfactory GmbH](https://www.webfactory.de), Bonn, Germany. 
 
