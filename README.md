@@ -43,7 +43,7 @@ Changes against the original version:
   still be masked, but you can configure your log format with `%{32}a`
   to get full IP addresses if you wish.
 
-**Caution** This is a fork of the fork from [webfactory GmbH](https://www.webfactory.de), Bonn, Germany, created by [Futureweb OG](https://www.futureweb.at/).
+**Caution** This is a fork of the fork from [webfactory GmbH](https://www.webfactory.de), Bonn, Germany, created by [Futureweb OG](https://www.futureweb.at/), St. Johann in Tirol, Austria.
 
 Changes against the original version:
 
