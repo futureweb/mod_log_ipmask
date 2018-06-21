@@ -3,10 +3,10 @@
  * mod_log_ipmask - An Apache http server modul extending mod_log_config
  *					to masquerade Client IP-Addresses in logfiles
  *
- * Copyright (C) 2008 Mario Oßwald, 
+ * Copyright (C) 2008 Mario OÃŸwald, 
  *					  Referatsleiter "Technik, Informatik, Medien"
  *					  beim
- *					  Sächsischen Datenschutzbeauftragten
+ *					  SÃ¤chsischen Datenschutzbeauftragten
  *
  * Author			  Florian van Koten
  *					  systematics NETWORK SERVICES GmbH
@@ -29,7 +29,7 @@
 
 #include "httpd.h"
 #include "http_config.h"
-#include "http_core.h"          /* Für REMOTE_NAME */
+#include "http_core.h"          /* FÃ¼r REMOTE_NAME */
 #include "mod_log_config.h"
 
 
@@ -123,7 +123,8 @@ static const char* get_filtered_ip(char* pszAddress, char* pszFilterMask, apr_po
 
 	} else {
 		/* ok */
-		pszFilteredIP = apr_pcalloc(pPool, sizeof("255.255.255.0"));
+		pIPSubNet->sub[0] &= 0xFFFFFFFF; /* kein Zwangsfilter ... */
+		pszFilteredIP = apr_pcalloc(pPool, sizeof("255.255.255.255"));
 		ipmask_inet_ntop4((char*)pIPSubNet->sub, pszFilteredIP);
 	}
 
@@ -132,11 +133,11 @@ static const char* get_filtered_ip(char* pszAddress, char* pszFilterMask, apr_po
 
 
 /**
- * @brief	Diese Funktion gibt die IP-Adresse des Clients maskiert zurück, wenn
- *			der Hostname nicht aufgelöst wurde
+ * @brief	Diese Funktion gibt die IP-Adresse des Clients maskiert zurÃ¼ck, wenn
+ *			der Hostname nicht aufgelÃ¶st wurde
  *
  * @param	request_rec*	pRequest (request-Struktur)
- * @param	char*			pszMask (Konfigurationsparameter für %h aus httpd.conf)
+ * @param	char*			pszMask (Konfigurationsparameter fÃ¼r %h aus httpd.conf)
  */
 static const char *log_remote_host_masked(request_rec* pRequest, char* pszMask) 
 {
@@ -156,10 +157,10 @@ static const char *log_remote_host_masked(request_rec* pRequest, char* pszMask)
 
 
 /**
- * @brief	Diese Funktion gibt die IP-Adresse des Clients maskiert zurück
+ * @brief	Diese Funktion gibt die IP-Adresse des Clients maskiert zurÃ¼ck
  *
  * @param	request_rec*	pRequest (request-Struktur)
- * @param	char*			pszMask (Konfigurationsparameter für %a aus httpd.conf)
+ * @param	char*			pszMask (Konfigurationsparameter fÃ¼r %a aus httpd.conf)
  */
 static const char *log_remote_address_masked(request_rec* pRequest, char* pszMask) 
 {
@@ -177,7 +178,7 @@ static const char *log_remote_address_masked(request_rec* pRequest, char* pszMas
 
 /**
  * @brief	Diese Funktion ersetzt die LogFormat-Direktiven aus mod_log_config.c,
- *			die Client IP-Adressen enthalten können, mit eigenen Handlern
+ *			die Client IP-Adressen enthalten kÃ¶nnen, mit eigenen Handlern
  * 
  * @param	apr_pool_t*	p
  * @param	apr_pool_t*	plog
@@ -198,7 +199,7 @@ static int ipmask_pre_config(apr_pool_t* p, apr_pool_t* plog, apr_pool_t* ptemp)
 
 /**
  * @brief	Diese Callback-Funktion registriert die pre-config-Funktion,
- *			durch die die Handler für die LogFormat-Direktiven ersetzt
+ *			durch die die Handler fÃ¼r die LogFormat-Direktiven ersetzt
  *			werden (%a und %h).
  *			Diese pre-config-Funktion muss nach der aus mod_log_config.c 
  *			aufgerufen werden.
@@ -212,9 +213,9 @@ static void ipmask_register_hooks (apr_pool_t* p)
 }
 
 /*
- * Deklaration und Veröffentlichung der Modul-Datenstruktur.
+ * Deklaration und VerÃ¶ffentlichung der Modul-Datenstruktur.
  * Der Name dieser Struktur ist wichtig ('log_ipmask_module') - er muss
- * mit dem Namen des Moduls übereinstimmen, da diese Struktur die
+ * mit dem Namen des Moduls Ã¼bereinstimmen, da diese Struktur die
  * einzige Verbindung zwischen dem http-Kern und diesem Modul ist.
  */
 module AP_MODULE_DECLARE_DATA log_ipmask_module =
