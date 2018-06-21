@@ -36,7 +36,8 @@ author.*
 Compile/Install instructions:  
 $ cd /path/to/mod_log_ipmask  
 $ apxs -c mod_log_ipmask.c  
-$ apxs -i -a -n log_ipmask mod_log_ipmask.la  
+$ apxs -i -A -n log_ipmask mod_log_ipmask.la  
+$ (Modul muss in Config noch aktiviert werden!!)
 
 **Caution** This is a fork of the original module, created by 
 [webfactory GmbH](https://www.webfactory.de), Bonn, Germany. 
