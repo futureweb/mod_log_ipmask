@@ -43,3 +43,9 @@ Changes against the original version:
   still be masked, but you can configure your log format with `%{32}a`
   to get full IP addresses if you wish.
 
+**Caution** This is a fork of the fork from [webfactory GmbH](https://www.webfactory.de), Bonn, Germany.
+
+Changes against the original version:
+
+* re-added enforcing mask - but with no enforcing ;-)
+* changed default behaviour to not mask at all until advicsed to do so ...
